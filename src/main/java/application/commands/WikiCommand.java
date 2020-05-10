@@ -74,6 +74,6 @@ public class WikiCommand implements TelegramCommandListener {
 
     @Override
     public String getDescription() {
-        return "do something";
+        return "plus any word and it will display it`s meaning";
     }
 }

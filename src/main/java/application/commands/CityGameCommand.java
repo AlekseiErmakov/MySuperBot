@@ -52,7 +52,7 @@ public class CityGameCommand implements TelegramCommandListener {
 
     @Override
     public String getDescription() {
-        return " game";
+        return "to play game";
     }
 
 }

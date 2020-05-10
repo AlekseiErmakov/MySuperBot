@@ -37,7 +37,7 @@ public class PasswordCommand implements TelegramCommandListener {
 
     private String generatePassword(String num) {
         int length = Integer.parseInt(num);
-        if (length < 2 || length > 10) {
+        if (length < 3 || length > 15) {
             return getDescription();
         } else return generatePassword(length);
     }
@@ -58,7 +58,7 @@ public class PasswordCommand implements TelegramCommandListener {
 
     @Override
     public String getDescription() {
-        return "paste number from 2 to 10 and i will generate random password";
+        return "plus number from 3 to 15 and i will generate random password";
     }
 
     private String generatePassword(int length) {

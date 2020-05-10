@@ -45,9 +45,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public List<String> findValidCityNames(String userCity) {
-        System.out.println(userCity + "Пустое 0_о");
         for (int i = userCity.length() - 1; i >= 0; i--) {
-            System.out.println(userCity.substring(i, i + 1));
             List<String> validCities = findCitiesStartsWith(userCity.substring(i, i + 1).toLowerCase());
             if (validCities.size() > 0) {
                 return validCities;
@@ -68,6 +66,7 @@ public class CityServiceImpl implements CityService {
     public List<City> findAll() {
         return cityDao.findAll();
     }
+
     public String getRandomCity(List<String> cities) {
         Random random = new Random();
         int index = random.nextInt(cities.size());

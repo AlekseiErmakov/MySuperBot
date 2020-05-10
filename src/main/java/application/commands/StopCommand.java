@@ -31,6 +31,6 @@ public class StopCommand implements TelegramCommandListener {
 
     @Override
     public String getDescription() {
-        return "Stops all process";
+        return "to stop all process";
     }
 }
