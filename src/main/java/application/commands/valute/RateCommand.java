@@ -35,7 +35,12 @@ public class RateCommand implements TelegramCommandListener {
             return ALERT_MSG;
         }
         String valute = text.substring(getSupportedCommand().length()+1);
-        rateService.updateCourses();
+        try{
+            rateService.updateCourses();
+        } catch (ServerUnavailableException ex){
+            return ex.getMessage();
+        }
+
         if (!rateService.isPresent(valute)){
             return String.format(UNKNOWN_CURRENCY,valute);
         }

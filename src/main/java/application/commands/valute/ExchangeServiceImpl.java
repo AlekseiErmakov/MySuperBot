@@ -35,7 +35,7 @@ public class ExchangeServiceImpl implements ExchangeRateService{
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return null;
+        throw new ServerUnavailableException("Server is unavailable now, please try ones more a bit later");
     }
 
     private String downloadFromCB() {
@@ -49,9 +49,9 @@ public class ExchangeServiceImpl implements ExchangeRateService{
     @Override
     public boolean isPresent(String valute) {
         return valuteList.getValutes()
-                .entrySet()
+                .values()
                 .stream()
-                .anyMatch(entry-> isSubString(valute,entry.getValue().getName()));
+                .anyMatch(currency-> isSubString(valute,currency));
     }
 
     @Override
@@ -66,22 +66,39 @@ public class ExchangeServiceImpl implements ExchangeRateService{
         return valuteList.getValutes()
                 .values()
                 .stream()
-                .filter(currency -> isSubString(valute,currency.getName()))
+                .filter(currency -> isSubString(valute,currency))
                 .collect(Collectors.toList());
     }
-    private boolean isSubString(String sub, String big){
+    private boolean isSubString(String input, Valute currency){
 
-        if (sub.equals(big)){
+        if (currency.getNominal() == 1){
+            return checkSingle(input,currency.getName());
+        }
+        return checkMulti(input,currency.getName());
+
+    }
+
+    private boolean checkMulti(String input, String fromCB) {
+        if (input.length() < 3){
+            return false;
+        }
+        String[] s = fromCB.split(" ");
+        fromCB = s[s.length-1];
+        return fromCB.startsWith(input.substring(0,2));
+    }
+
+    private boolean checkSingle(String input, String fromCb) {
+        if (input.equals(fromCb)){
             return true;
         }
-        if (sub.length() > big.length()){
+        if (input.length() > fromCb.length()){
             return false;
         }
-        if (sub.length() < 3){
+        if (input.length() < 3){
             return false;
         }
-        for (int i = 0; i <= big.length() - sub.length(); i++){
-            if (sub.equalsIgnoreCase(big.substring(i,i+sub.length()))){
+        for (int i = 0; i <= fromCb.length() - input.length(); i++){
+            if (input.equalsIgnoreCase(fromCb.substring(i,i+input.length()))){
                 return true;
             }
         }
