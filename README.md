@@ -3,10 +3,9 @@
 и Spring FrameWork.
 Список реализованных комманд : 
 1. [StartCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/StartCommand.java) - выводит приветственное сообщение.
-2. [HelpCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/HelpCommand.java) - выводит список доступных команд, 
-кроме добавленныхв исключение. 
+2. [HelpCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/HelpCommand.java) - выводит список доступных команд, кроме добавленных в исключение. 
 1. [WikiCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/WikiCommand.java) - в ответ 
-на запрос пользователя(любое существительное) в чате отправляет ответ ввиде его определения.
+на запрос пользователя(любое существительное) в чате отправляется ответ в виде его определения.
 2. [RateCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/valute/RateCommand.java) - в ответ
 на запрос пользователя(любая свободно конвертируемая валюта) отправляет ее курс в рублях по последним данным Центрального Банка Российской Федерации.
 3. [PassCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/PasswordCommand.java) - в ответ на 
