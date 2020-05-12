@@ -11,4 +11,4 @@
 3. [PassCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/PasswordCommand.java) - в ответ на 
 запрос пользователя(целое число в диапазоне от 3 до 15) отправляет сгенерированный пароль заданного размера.
 4. [CityGameCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/CityGameCommand.java) - запускает игру
-в города [CityGame](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/scripts/cities/CitiesGame.java) пока команда [StopCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/StopCommand.java) не будет вызвана, поддерживается игра на русском и английском языке.
+в города [CityGame](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/scripts/cities/CitiesGame.java), пока команда [StopCommand](https://github.com/lexLaeda/MySuperBot/blob/master/src/main/java/application/commands/StopCommand.java) не будет вызвана, поддерживается игра на русском и английском языке.
