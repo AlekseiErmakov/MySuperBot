@@ -1,5 +1,7 @@
 package application.scripts.cities.dao;
 
+import application.model.users.Customer;
+import application.model.users.UserRequest;
 import application.scripts.cities.model.City;
 import application.scripts.cities.model.Country;
 import application.scripts.cities.model.Region;
@@ -20,6 +22,8 @@ public class HibernateSessionFactoryUtil {
             configuration.addAnnotatedClass(City.class);
             configuration.addAnnotatedClass(Region.class);
             configuration.addAnnotatedClass(Country.class);
+            configuration.addAnnotatedClass(Customer.class);
+            configuration.addAnnotatedClass(UserRequest.class);
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
             sessionFactory = configuration.buildSessionFactory(builder.build());
         }

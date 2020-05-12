@@ -12,4 +12,5 @@ public class CityDao {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         return session.createQuery("SELECT a FROM City a",City.class).getResultList();
     }
+
 }

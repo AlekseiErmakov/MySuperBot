@@ -1,6 +1,6 @@
 package application.commands.valute;
 
-import application.download.DownLoadService;
+import application.service.DownLoadService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

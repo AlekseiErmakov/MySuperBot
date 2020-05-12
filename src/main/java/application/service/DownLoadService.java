@@ -1,4 +1,4 @@
-package application.download;
+package application.service;
 
 import okhttp3.*;
 import org.springframework.stereotype.Service;
