@@ -1,8 +1,8 @@
 package application.scripts.cities;
 
 import application.scripts.CityNotFoundException;
-import application.scripts.cities.dao.CityDao;
-import application.scripts.cities.model.City;
+import application.repository.CityDao;
+import application.model.cities.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

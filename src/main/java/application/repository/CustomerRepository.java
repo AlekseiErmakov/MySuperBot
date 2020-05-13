@@ -1,9 +1,9 @@
-package application.dao;
+package application.repository;
 
 import application.model.users.Customer;
 
 public interface CustomerRepository {
     Customer findByTelegramId(Integer telegramId);
 
-    void save(Customer customer);
+    Customer save(Customer customer);
 }

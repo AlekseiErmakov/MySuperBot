@@ -1,4 +1,4 @@
-package application.model.factory;
+package application.factory;
 
 import application.model.users.Customer;
 import application.model.users.UserRequest;
@@ -9,11 +9,9 @@ public class RequestFactory {
         String command = getCommand(text);
          if (!command.isEmpty()){
             userRequest.setCommand(command);
-            userRequest.setCommandRequest(true);
             userRequest.setBody(text.replaceAll(command+" ",""));
          } else {
              userRequest.setCommand("");
-             userRequest.setCommandRequest(false);
              userRequest.setBody(text);
          }
          userRequest.setCustomer(customer);

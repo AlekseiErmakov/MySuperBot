@@ -1,4 +1,4 @@
-package application.scripts.cities.model;
+package application.model.cities;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -6,19 +6,19 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @EqualsAndHashCode
 @Entity
-@Table(name = "country")
-public class Country {
+@Table(name = "city")
+public class City {
 
     @Id
     @GeneratedValue
     private Long id;
+
+    @OneToOne
+    private Region region;
 
     private String name;
 

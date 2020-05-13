@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,12 +14,26 @@ import javax.persistence.*;
 @Table(name = "user_request")
 public class UserRequest {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="request_id")
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
-    @Column(name = "is_command_request")
-    private boolean isCommandRequest;
+
     private String command;
+
     private String body;
+
+    @Column(name = "created")
+    private LocalDateTime created;
+
+    @PrePersist
+    public void  toCreate(){
+        if (created == null){
+            setCreated(LocalDateTime.now());
+        }
+    }
+    public UserRequest(){}
 }

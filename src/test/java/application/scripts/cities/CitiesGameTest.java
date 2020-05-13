@@ -1,6 +1,6 @@
 package application.scripts.cities;
 
-import application.scripts.cities.dao.CityDao;
+import application.repository.CityDao;
 import org.junit.Before;
 import org.junit.Test;
 

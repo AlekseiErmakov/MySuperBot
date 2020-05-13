@@ -16,8 +16,10 @@
         <property name="show_sql">false</property> <!-- Show SQL in console -->
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
-        <mapping class="application.scripts.cities.model.City"/>
-        <mapping class="application.scripts.cities.model.Region"/>
-        <mapping class="application.scripts.cities.model.Country"/>
+        <mapping class="application.model.cities.City"/>
+        <mapping class="application.model.cities.Region"/>
+        <mapping class="application.model.cities.Country"/>
+        <mapping class="application.model.users.Customer"/>
+        <mapping class="application.model.users.UserRequest"/>
     </session-factory>
 </hibernate-configuration>

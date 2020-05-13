@@ -1,10 +1,10 @@
-package application.scripts.cities.dao;
+package application.factory;
 
 import application.model.users.Customer;
 import application.model.users.UserRequest;
-import application.scripts.cities.model.City;
-import application.scripts.cities.model.Country;
-import application.scripts.cities.model.Region;
+import application.model.cities.City;
+import application.model.cities.Country;
+import application.model.cities.Region;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

@@ -1,4 +1,4 @@
-package application.dao;
+package application.repository;
 
 import application.model.users.UserRequest;
 
